@@ -1,0 +1,18 @@
+<div>home page {{bala}}</div>
+
+<div class="container-fluid">
+
+	  <div class="bestof card col-lg-12 col-md-8">
+    <div class="inner row">
+        <h1>Best of {{dest.name}}</h1>
+
+        <div class="col-lg-6" ng-repeat="showData in showDatas">
+                
+                <p>{{showData.username}}</p>
+                <p>{{showData.password}}</p>
+                <p>{{showData._id}}</p>
+        </div> 
+
+    </div> <!-- inner -->
+</div> <!-- bestof -->
+</div>

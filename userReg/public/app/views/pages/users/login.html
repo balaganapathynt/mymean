@@ -1,0 +1,49 @@
+﻿
+
+ <div>
+		<div class="col-md-4 col-md-offset-4">
+            
+			<div class="box">
+				 <h1 class="text-center login-title">Sign in to continue to Heniz</h1>
+<img src="assets/images/login-icon.jpg" class="log-ico" />
+				<form role="form" ng-submit="main.doLogin(loginData);">
+
+					<div class="divider-form"></div>
+
+					<div class="form-group">
+						<label >Email address</label>
+						<input type="text" class="form-control"  placeholder="Enter Username" ng-model="main.loginData.username">
+					</div>
+
+					<div class="divider-form"></div>
+
+					<div class="form-group">
+						<label >Password</label>
+						<input type="password" class="form-control"  placeholder="Password" ng-model="main.loginData.password">
+					</div>
+
+					<div class="divider-form"></div>
+
+					 <div class="jumbotron text-center" ng-show="main.loading">
+                            <span class="glyphicon glyphicon-repeat spinner text-success"></span>
+                            	<strong class="text-success">Loading...</strong>
+                            </div>
+                            <div class="row show-hide-message" ng-show="main.successMsg">
+                            	<div class="alert alert-success">{{main.successMsg}} </div>
+                            </div>
+                             <div class="row show-hide-message" ng-show="main.errorMsg">
+                            	<div class="alert alert-danger">{{main.errorMsg}}</div>
+                            </div>
+
+
+					<p class="text-center">You agree to the <strong>Terms & Conditions</strong>.</p>
+<md-button type="submit" class="md-raised md-warn md-button md-ink-ripple">Login In</md-button><br>
+<a href="/resetpassword"><md-button type="button" class="md-raised md-accent md-button md-ink-ripple">Forgot Password</md-button></a>
+<a href="/resetusername"><md-button type="button" class="md-raised md-accent md-button md-ink-ripple">Forgot Username</md-button></a>
+					<!-- <button type="submit" class="btn-block btn btn-lg btn-primary">Login In</button> -->
+
+					<p class="text-center">Don't have an account? <a ui-sref="signup">Register in here</a></p>
+				</form>
+			</div>
+		</div>
+	</div>
