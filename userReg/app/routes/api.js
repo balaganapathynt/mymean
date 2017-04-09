@@ -21,11 +21,26 @@ module.exports = function(router) {
 	//========================USER REGISTRATION ROUTE ===============================
 router.put('/updateDetails', function (req, res) {
 		
-			  var company = req.data._id;
-  				console.log(company)
+			var myid = req.body._id;
+  				console.log(req.body);
+var user = new User();
+			user.name = req.body.name;
+			user.companyname = req.body.companyname;
+			user.companyemail = req.body.companyemail;
+			user.mobile = req.body.mobile;
+  			if(req.body.name == null || req.body.companyname == null || req.body.companyemail == null || req.body.mobile == null){
+
+				res.json({success:false, message:'check...'});
+
+			}else{
+
+				
+			}
 });	
+
 	//========================http://localhost:8080/api/users ===============================
 		router.post('/users', function(req, res){
+			console.log(req.body)
 			var user = new User();
 			user.username = req.body.username;
 			user.password = req.body.password;
@@ -71,7 +86,7 @@ router.put('/updateDetails', function (req, res) {
 				if(!validPassword){
 					res.json({success:false, message:'Could Not Authenticate password'});
 				}else  {
-					var token = jwt.sign({username:user.username, email:user.email, _id:user._id}, secret, {expiresIn:'1h'});
+					var token = jwt.sign({username:user.username, email:user.email, _id:user._id}, secret, {expiresIn:'10m'});
 					console.log(token)
 					res.json({success:true, message:'User authendicated!', token:token});
 				}
