@@ -33,14 +33,13 @@ angular.module('userServices',[])
 
 		passAllDataToDB.passAllInfo = function(userObject){
 
-			return $http({
-						    url: '/api/updateDetails',  userObject, 
+		/*	return $http({
+						    url: '/api/updateDetails', userObject, 
 						    method: "put",
 						   // params: {user_id: myId}
- 						});
+ 						});*/
 
-
-
+return $http.put('/api/updateDetails', userObject);
 			
 		}
 
